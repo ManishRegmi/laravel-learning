@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\FrontendController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\MoviesController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// fornt routes
+Route::get('/',[FrontendController::class,'index']);
 
+// login routes
 Route::get('/login',[LoginController::class,'login']);
 Route::post('/check-creadentials',[LoginController::class,'checkCredentials']);
-Route::get('/movies-index',[LoginController::class,'movies']);
+
+
+// movies routess
+Route::get('/movies-index',[MoviesController::class,'movies']);
+Route::post('/create-movie',[MoviesController::class,'create']);
+Route::get('/movie-description/{id}',[FrontendController::class,'movieDescription']);

@@ -27,8 +27,5 @@ class LoginController extends Controller
             return back();
         }
     }
-    function movies()
-    {
-        return view('movies.index');
-    }
+
 }
