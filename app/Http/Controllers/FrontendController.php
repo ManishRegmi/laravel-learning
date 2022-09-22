@@ -18,4 +18,9 @@ class FrontendController extends Controller
         $movie = Movies::find($id);
         return view('front.moviesDesc',compact('movie'));
     }
+
+    function search()
+    {
+        return view('front.searchResult');
+    }
 }
